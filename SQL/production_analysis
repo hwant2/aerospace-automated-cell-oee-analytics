@@ -1,0 +1,11 @@
+-- Aerospace Automated Manufacturing Cell
+-- Production Analysis
+-- Dataset: Synthetic MFG-005
+
+SELECT
+    COUNT(*) AS total_records,
+    SUM(planned_production) AS total_planned_production,
+    SUM(actual_production) AS total_actual_production,
+    SUM(good_units) AS total_good_units,
+    SUM(defective_units) AS total_defective_units
+FROM production_data;
