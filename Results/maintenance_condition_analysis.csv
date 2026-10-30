@@ -1,0 +1,9 @@
+planned_maintenance_flag,maintenance_type_last,records,avg_equipment_condition,avg_unplanned_downtime,total_unplanned_downtime
+no,emergency,263,5.86,70.22,18468.93
+no,preventive,1142,5.94,66.04,75414.77
+no,predictive,383,6.02,65.25,24990.57
+no,corrective,962,6.05,62.56,60184.0
+yes,predictive,32,6.34,53.99,1727.8
+yes,preventive,104,6.45,48.05,4997.6
+yes,corrective,78,6.32,46.71,3643.1
+yes,emergency,36,6.13,43.16,1553.9

@@ -1,0 +1,3 @@
+equipment_failure_flag,records,avg_unplanned_downtime,total_unplanned_downtime,avg_equipment_condition
+no,1846,37.56,69336.0,6.13
+yes,1154,105.41,121644.66,5.82
