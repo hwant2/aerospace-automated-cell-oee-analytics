@@ -145,7 +145,16 @@ These figures are synthetic dataset values and are not actual financial losses o
 
 ## Visualizations
 
-The project includes the following charts:
+## Manufacturing Analytics Visualizations
+
+### Production Output vs. Plan
+![Production Output vs Plan](Visualizations/production_output_vs_plan.png)
+
+### Work Center Downtime
+![Work Center Downtime](Visualizations/work_center_downtime.png)
+
+### Equipment Failure and Downtime
+![Equipment Failure Downtime](Visualizations/equipment_failure_downtime.png)
 
 ### Production Output vs. Plan
 ![Production Output vs Plan](Visualizations/production_output_vs_plan.png)
