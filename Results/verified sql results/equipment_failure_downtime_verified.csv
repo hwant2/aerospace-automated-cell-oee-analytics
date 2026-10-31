@@ -1,0 +1,3 @@
+equipment_failure_flag,record_count,avg_unplanned_downtime,avg_mttr,avg_mtbf
+no,1846,37.56,12.3,235.57
+yes,1154,105.41,25.38,139.53
