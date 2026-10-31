@@ -7,7 +7,8 @@
 -- 1. Overall equipment reliability
 SELECT
     COUNT(*) AS total_records,
-    SUM(CASE WHEN equipment_failure_flag = 1 THEN 1 ELSE 0 END)
+    SUM(CASE WHEN LOWER(TRIM(equipment_failure_flag)) = 'yes'
+     THEN 1 ELSE 0 END)
         AS failure_records,
     ROUND(AVG(mtbf_minutes), 2) AS avg_mtbf_minutes,
     ROUND(AVG(mttr_minutes), 2) AS avg_mttr_minutes,
@@ -19,7 +20,8 @@ FROM production_data;
 SELECT
     work_center_id,
     COUNT(*) AS production_records,
-    SUM(CASE WHEN equipment_failure_flag = 1 THEN 1 ELSE 0 END)
+    SUM(CASE WHEN LOWER(TRIM(equipment_failure_flag)) = 'yes'
+     THEN 1 ELSE 0 END)
         AS failure_records,
     ROUND(AVG(mtbf_minutes), 2) AS avg_mtbf_minutes,
     ROUND(AVG(mttr_minutes), 2) AS avg_mttr_minutes,
@@ -51,7 +53,8 @@ SELECT
         ELSE '10+ years'
     END AS equipment_age_group,
     COUNT(*) AS record_count,
-    SUM(CASE WHEN equipment_failure_flag = 1 THEN 1 ELSE 0 END)
+    SUM(CASE WHEN LOWER(TRIM(equipment_failure_flag)) = 'yes'
+     THEN 1 ELSE 0 END)
         AS failure_records,
     ROUND(AVG(mtbf_minutes), 2) AS avg_mtbf_minutes,
     ROUND(AVG(mttr_minutes), 2) AS avg_mttr_minutes
