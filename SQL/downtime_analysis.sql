@@ -55,5 +55,37 @@ SELECT
     mttr_minutes,
     mtbf_minutes
 FROM production_data
+
+
+-- 6. Downtime category reconciliation
+-- Flag records with discrepancies exceeding 10 minutes
+
+WITH downtime_check AS (
+    SELECT
+        work_center_id,
+        downtime_unplanned_minutes,
+        (
+            COALESCE(downtime_category_mechanical, 0) +
+            COALESCE(downtime_category_electrical, 0) +
+            COALESCE(downtime_category_tooling, 0) +
+            COALESCE(downtime_category_material, 0) +
+            COALESCE(downtime_category_operator, 0) +
+            COALESCE(downtime_category_quality_hold, 0)
+        ) AS category_total
+    FROM production_data
+)
+SELECT
+    COUNT(*) AS total_records,
+    SUM(
+        CASE WHEN ABS(category_total - downtime_unplanned_minutes) > 10
+        THEN 1 ELSE 0 END
+    ) AS major_discrepancy_records,
+    ROUND(SUM(downtime_unplanned_minutes), 2) AS total_unplanned_minutes,
+    ROUND(SUM(category_total), 2) AS total_category_minutes,
+    ROUND(
+        SUM(downtime_unplanned_minutes - category_total), 2
+    ) AS net_unallocated_minutes
+FROM downtime_check;
+
 ORDER BY largest_downtime_event_minutes DESC
 LIMIT 20;
