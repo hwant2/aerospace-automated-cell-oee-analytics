@@ -54,7 +54,8 @@ SELECT
     mttr_minutes,
     mtbf_minutes
 FROM production_data
-
+ORDER BY largest_downtime_event_minutes DESC
+LIMIT 20;
 
 -- 6. Downtime category reconciliation
 -- Flag records with discrepancies exceeding 10 minutes
@@ -85,6 +86,3 @@ SELECT
         SUM(downtime_unplanned_minutes - category_total), 2
     ) AS net_unallocated_minutes
 FROM downtime_check;
-
-ORDER BY largest_downtime_event_minutes DESC
-LIMIT 20;
