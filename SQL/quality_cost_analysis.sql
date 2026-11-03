@@ -43,21 +43,27 @@ SELECT
         AS total_rework_cost_usd
 FROM production_data;
 
--- 4. Work centers with highest combined cost
+-- 4. Work centers with highest non-overlapping costs
+-- COPQ includes a 20% downtime allocation.
+-- Use downtime + scrap + rework to avoid double counting.
+
 SELECT
     work_center_id,
     ROUND(SUM(total_downtime_cost_usd), 2)
         AS downtime_cost_usd,
-    ROUND(SUM(cost_of_poor_quality_usd), 2)
-        AS poor_quality_cost_usd,
+    ROUND(SUM(scrap_cost_usd), 2)
+        AS scrap_cost_usd,
+    ROUND(SUM(rework_cost_usd), 2)
+        AS rework_cost_usd,
     ROUND(
         SUM(total_downtime_cost_usd)
-        + SUM(cost_of_poor_quality_usd),
+        + SUM(scrap_cost_usd)
+        + SUM(rework_cost_usd),
         2
-    ) AS combined_cost_usd
+    ) AS non_overlapping_cost_usd
 FROM production_data
 GROUP BY work_center_id
-ORDER BY combined_cost_usd DESC
+ORDER BY non_overlapping_cost_usd DESC
 LIMIT 15;
 
 -- 5. Most common primary defect types
