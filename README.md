@@ -153,7 +153,7 @@ aerospace-automated-cell-oee-analytics/
 ├── Documentation/
 │   └── sql_validation_report.md
 ├── Python/
-│   └── aerospace_manufacturing_analytics.ipynb
+│   └── Aerospace_Manufacturing_Analytics.ipynb
 ├── SQL/
 │   ├── production_analysis.sql
 │   ├── downtime_analysis.sql
