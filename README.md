@@ -229,7 +229,7 @@ Although the dataset contains OEE availability, performance, quality, and overal
 Future improvements include:
 
 - Validating OEE calculations and aggregation methods
-- Developing an interactive executive dashboard
+- Extending the completed static executive dashboard into an interactive dashboard
 - Adding downtime Pareto analysis
 - Comparing normalized work-center performance
 - Exploring predictive equipment failure models
