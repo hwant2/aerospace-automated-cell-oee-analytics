@@ -134,6 +134,16 @@ These are synthetic modeled costs, not actual company losses. The combined metri
 
 ## Manufacturing Analytics Visualizations
 
+### Executive Manufacturing Performance Dashboard
+
+![Executive Manufacturing Performance Dashboard](Visualizations/executive_manufacturing_dashboard.png)
+
+This executive dashboard summarizes production attainment, output quality, downtime cost exposure, and integrated maintenance investment priorities across the synthetic manufacturing dataset.
+
+Key findings include 65.25% production achievement, a 99.73% good-unit rate, and $28.34 million in synthetic downtime costs. WC-028 ranked first across all four tested investment-priority weighting scenarios.
+
+The dashboard is a static visualization generated with Python and Matplotlib. Investment priority scores are exploratory rankings, not predicted financial returns.
+
 ### Production Output vs. Plan
 
 ![Production Output vs Plan](Visualizations/production_output_vs_plan.png)
