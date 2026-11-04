@@ -174,6 +174,7 @@ aerospace-automated-cell-oee-analytics/
 │   ├── Original analysis CSV files
 │   └── Five verified SQL result CSV files
 ├── Visualizations/
+│   ├── executive_manufacturing_dashboard.png
 │   ├── production_output_vs_plan.png
 │   ├── work_center_downtime.png
 │   └── equipment_failure_downtime.png
